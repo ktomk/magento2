@@ -1119,6 +1119,10 @@ class Installer
             $this->deploymentConfig->get(
                 ConfigOptionsListConstants::CONFIG_PATH_DB_CONNECTION_DEFAULT .
                 '/' . ConfigOptionsListConstants::KEY_PASSWORD
+            ),
+            $this->deploymentConfig->get(
+                ConfigOptionsListConstants::CONFIG_PATH_DB_CONNECTION_DEFAULT .
+                '/' . ConfigOptionsListConstants::KEY_PORT
             )
         );
         $prefix = $this->deploymentConfig->get(

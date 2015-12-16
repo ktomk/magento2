@@ -15,6 +15,7 @@ use Magento\Setup\Module\ConnectionFactory;
  */
 class DbValidator
 {
+    const MYSQL_DEFAULT_PORT = 3306;
 
     /**
      * Db prefix max length
@@ -72,14 +73,22 @@ class DbValidator
      * @param string $dbHost
      * @param string $dbUser
      * @param string $dbPass
+     * @param int    $dbPort [optional]
      * @return boolean
      * @throws \Magento\Setup\Exception
      */
-    public function checkDatabaseConnection($dbName, $dbHost, $dbUser, $dbPass = '')
+    public function checkDatabaseConnection($dbName, $dbHost, $dbUser, $dbPass = '', $dbPort = null)
     {
+        $port = (int)(null === $dbPort ? self::MYSQL_DEFAULT_PORT : $dbPort);
+
+        if (1 > $port or $port > 65535) {
+            throw new \InvalidArgumentException(sprintf('Invalid database port (%s) given.', var_export($dbPort, true)));
+        }
+
         // establish connection to information_schema view to retrieve information about user and table privileges
         $connection = $this->connectionFactory->create([
             ConfigOptionsListConstants::KEY_NAME => 'information_schema',
+            ConfigOptionsListConstants::KEY_PORT => $port,
             ConfigOptionsListConstants::KEY_HOST => $dbHost,
             ConfigOptionsListConstants::KEY_USER => $dbUser,
             ConfigOptionsListConstants::KEY_PASSWORD => $dbPass,
