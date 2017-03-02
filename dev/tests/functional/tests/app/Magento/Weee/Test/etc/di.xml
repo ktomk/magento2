@@ -16,7 +16,7 @@
             <argument name="classReferences" xsi:type="array">
                 <item name="dynamicRows" xsi:type="array">
                     <item name="selector" xsi:type="string">[data-role="grid"]</item>
-                    <item name="type" xsi:type="string">\Magento\Weee\Test\Block\Adminhtml\Product\Edit\Section\ProductDetails\Fpt</item>
+                    <item name="type" xsi:type="string">Magento\Weee\Test\Block\Adminhtml\Product\Edit\Section\ProductDetails\Fpt</item>
                 </item>
             </argument>
         </arguments>

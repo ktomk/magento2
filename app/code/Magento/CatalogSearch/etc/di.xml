@@ -231,7 +231,7 @@
     <type name="Magento\Search\Model\AdapterFactory">
         <arguments>
             <argument name="path" xsi:type="const">Magento\CatalogSearch\Model\ResourceModel\EngineInterface::CONFIG_ENGINE_PATH</argument>
-            <argument name="scopeType" xsi:type="const">\Magento\Store\Model\ScopeInterface::SCOPE_STORE</argument>
+            <argument name="scopeType" xsi:type="const">Magento\Store\Model\ScopeInterface::SCOPE_STORE</argument>
         </arguments>
     </type>
     <type name="Magento\Search\Model\Autocomplete">
@@ -250,7 +250,7 @@
     </type>
     <type name="Magento\CatalogSearch\Model\Search\RequestGenerator\GeneratorResolver">
         <arguments>
-            <argument name="defaultGenerator" xsi:type="object">\Magento\CatalogSearch\Model\Search\RequestGenerator\General</argument>
+            <argument name="defaultGenerator" xsi:type="object">Magento\CatalogSearch\Model\Search\RequestGenerator\General</argument>
             <argument name="generators" xsi:type="array">
                 <item name="decimal" xsi:type="object">Magento\CatalogSearch\Model\Search\RequestGenerator\Decimal</item>
             </argument>
@@ -258,17 +258,17 @@
     </type>
     <type name="Magento\CatalogSearch\Model\Indexer\IndexerHandler">
         <arguments>
-            <argument name="indexScopeResolver" xsi:type="object">\Magento\CatalogSearch\Model\Indexer\Scope\ScopeProxy</argument>
+            <argument name="indexScopeResolver" xsi:type="object">Magento\CatalogSearch\Model\Indexer\Scope\ScopeProxy</argument>
         </arguments>
     </type>
     <type name="Magento\CatalogSearch\Model\Indexer\IndexStructure">
         <arguments>
-            <argument name="indexScopeResolver" xsi:type="object">\Magento\CatalogSearch\Model\Indexer\Scope\ScopeProxy</argument>
+            <argument name="indexScopeResolver" xsi:type="object">Magento\CatalogSearch\Model\Indexer\Scope\ScopeProxy</argument>
         </arguments>
     </type>
     <type name="Magento\CatalogSearch\Model\Indexer\Scope\IndexSwitcher">
         <arguments>
-            <argument name="indexScopeResolver" xsi:type="object">\Magento\CatalogSearch\Model\Indexer\Scope\ScopeProxy</argument>
+            <argument name="indexScopeResolver" xsi:type="object">Magento\CatalogSearch\Model\Indexer\Scope\ScopeProxy</argument>
         </arguments>
     </type>
     <type name="Magento\CatalogSearch\Model\Indexer\Scope\ScopeProxy">

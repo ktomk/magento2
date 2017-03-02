@@ -312,7 +312,7 @@
     </type>
     <type name="Magento\Catalog\Model\Product\ReservedAttributeList">
         <arguments>
-            <argument name="productModel" xsi:type="string">\Magento\Catalog\Model\Product</argument>
+            <argument name="productModel" xsi:type="string">Magento\Catalog\Model\Product</argument>
             <argument name="reservedAttributes" xsi:type="array">
                 <item name="position" xsi:type="string">position</item>
             </argument>
