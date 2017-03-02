@@ -26,7 +26,7 @@
             <data name="pageClass" xsi:type="string">Magento\Customer\Test\Page\Adminhtml\CustomerIndex</data>
             <data name="gridRetriever" xsi:type="string">getCustomerGridBlock</data>
             <data name="idGetter" xsi:type="string">getId</data>
-            <constraint name="Magento\Ui\Test\Constraint\AssertGridFiltering"/>
+            <constraint name="\Magento\Ui\Test\Constraint\AssertGridFiltering"/>
         </variation>
     </testCase>
 </config>

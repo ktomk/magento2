@@ -26,7 +26,7 @@
             <data name="pageClass" xsi:type="string">Magento\Cms\Test\Page\Adminhtml\CmsPageIndex</data>
             <data name="gridRetriever" xsi:type="string">getCmsPageGridBlock</data>
             <data name="idGetter" xsi:type="string">getPageId</data>
-            <constraint name="Magento\Ui\Test\Constraint\AssertGridFiltering"/>
+            <constraint name="\Magento\Ui\Test\Constraint\AssertGridFiltering"/>
         </variation>
         <variation name="CmsBlockGridFiltering">
             <data name="tag" xsi:type="string">severity:S3</data>

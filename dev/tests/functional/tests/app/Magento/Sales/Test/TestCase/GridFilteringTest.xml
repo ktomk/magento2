@@ -31,7 +31,7 @@
             <data name="pageClass" xsi:type="string">Magento\Sales\Test\Page\Adminhtml\OrderIndex</data>
             <data name="gridRetriever" xsi:type="string">getSalesOrderGrid</data>
             <data name="idGetter" xsi:type="string">getId</data>
-            <constraint name="Magento\Ui\Test\Constraint\AssertGridFiltering"/>
+            <constraint name="\Magento\Ui\Test\Constraint\AssertGridFiltering"/>
         </variation>
         <variation name="SalesInvoiceGridFiltering">
             <data name="tag" xsi:type="string">severity:S3</data>
@@ -109,7 +109,7 @@
             <data name="gridRetriever" xsi:type="string">getCreditMemoGrid</data>
             <data name="idGetter" xsi:type="string">getId</data>
             <data name="idColumn" xsi:type="string">Order</data>
-            <constraint name="Magento\Ui\Test\Constraint\AssertGridFiltering"/>
+            <constraint name="\Magento\Ui\Test\Constraint\AssertGridFiltering"/>
         </variation>
     </testCase>
 </config>
