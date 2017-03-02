@@ -203,6 +203,8 @@ class Bootstrap
      */
     public function __construct(ObjectManagerFactory $factory, $rootDir, array $initParams)
     {
+        // FIXME(tk): blurb
+        var_dump($initParams);
         $this->factory = $factory;
         $this->rootDir = $rootDir;
         $this->server = $initParams;
