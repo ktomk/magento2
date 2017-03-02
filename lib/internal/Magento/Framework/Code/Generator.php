@@ -7,6 +7,7 @@ namespace Magento\Framework\Code;
 
 use Magento\Framework\Code\Generator\DefinedClasses;
 use Magento\Framework\Code\Generator\EntityAbstract;
+use Magento\Framework\ObjectManager\IllegalTypeNameException;
 
 class Generator
 {
@@ -51,6 +52,13 @@ class Generator
                 new \Magento\Framework\Filesystem\Driver\File()
             );
         $this->definedClasses = $definedClasses ?: new DefinedClasses();
+
+        // FIXME(tk): into the rabbit hole  ..
+        foreach ($generatedEntities as $entityType => $generatorClass) {
+            IllegalTypeNameException::assert($entityType);
+            IllegalTypeNameException::assert($generatorClass);
+        }
+
         $this->_generatedEntities = $generatedEntities;
     }
 
