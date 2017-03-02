@@ -187,7 +187,8 @@ class Proxy extends \Magento\Framework\Code\Generator\EntityAbstract
             'name' => '__construct',
             'parameters' => [
                 ['name' => 'objectManager', 'type' => '\\' . \Magento\Framework\ObjectManagerInterface::class],
-                ['name' => 'instanceName', 'defaultValue' => $this->getSourceClassName()],
+                // FIXME(tk): sourceClassName is tainted, so requires ltrim'ing away the leading backspace.
+                ['name' => 'instanceName', 'defaultValue' => ltrim($this->getSourceClassName(), '\\')],
                 ['name' => 'shared', 'defaultValue' => true],
             ],
             'body' => "\$this->_objectManager = \$objectManager;" .
