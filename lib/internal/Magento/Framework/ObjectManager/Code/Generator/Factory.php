@@ -44,7 +44,7 @@ class Factory extends \Magento\Framework\Code\Generator\EntityAbstract
             'name' => '__construct',
             'parameters' => [
                 ['name' => 'objectManager', 'type' => '\\' . \Magento\Framework\ObjectManagerInterface::class],
-                ['name' => 'instanceName', 'defaultValue' => $this->getSourceClassName()],
+                ['name' => 'instanceName', 'defaultValue' => ltrim($this->getSourceClassName(), '\\')],
             ],
             'body' => "\$this->_objectManager = \$objectManager;\n\$this->_instanceName = \$instanceName;",
             'docblock' => [
