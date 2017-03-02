@@ -73,7 +73,7 @@ class ExtensionAttributesFactory
         }
 
         $extensionFactoryName = $extensionClassName . 'Factory';
-        $extensionFactory = $this->objectManager->create($extensionFactoryName);
+        $extensionFactory = $this->objectManager->create(ltrim($extensionFactoryName, '\\'));
         return $extensionFactory->create($data);
     }
 
