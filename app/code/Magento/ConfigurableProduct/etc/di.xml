@@ -42,7 +42,7 @@
     <type name="Magento\Sales\Model\ResourceModel\Report\Bestsellers">
         <arguments>
             <argument name="ignoredProductTypes" xsi:type="array">
-                <item name="configurable" xsi:type="const">\Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE</item>
+                <item name="configurable" xsi:type="const">Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE</item>
             </argument>
         </arguments>
     </type>
@@ -164,7 +164,7 @@
     <type name="Magento\Framework\App\Cache\Tag\Strategy\Factory">
         <arguments>
             <argument name="customStrategies" xsi:type="array">
-                <item name="Magento\Catalog\Api\Data\ProductInterface" xsi:type="object">\Magento\ConfigurableProduct\Model\Product\Cache\Tag\Configurable</item>
+                <item name="Magento\Catalog\Api\Data\ProductInterface" xsi:type="object">Magento\ConfigurableProduct\Model\Product\Cache\Tag\Configurable</item>
             </argument>
         </arguments>
     </type>
