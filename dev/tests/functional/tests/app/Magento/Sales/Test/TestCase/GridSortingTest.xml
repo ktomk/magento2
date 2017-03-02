@@ -25,7 +25,7 @@
             </data>
             <data name="pageClass" xsi:type="string">Magento\Sales\Test\Page\Adminhtml\OrderIndex</data>
             <data name="gridRetriever" xsi:type="string">getSalesOrderGrid</data>
-            <constraint name="\Magento\Ui\Test\Constraint\AssertGridSorting"/>
+            <constraint name="Magento\Ui\Test\Constraint\AssertGridSorting"/>
         </variation>
         <variation name="SalesInvoiceGridSorting">
             <data name="tag" xsi:type="string">severity:S3</data>
@@ -44,7 +44,7 @@
             </data>
             <data name="pageClass" xsi:type="string">Magento\Sales\Test\Page\Adminhtml\InvoiceIndex</data>
             <data name="gridRetriever" xsi:type="string">getInvoicesGrid</data>
-            <constraint name="\Magento\Ui\Test\Constraint\AssertGridSorting"/>
+            <constraint name="Magento\Ui\Test\Constraint\AssertGridSorting"/>
         </variation>
         <variation name="SalesShipmentGridSorting">
             <data name="tag" xsi:type="string">severity:S3</data>
@@ -63,7 +63,7 @@
             </data>
             <data name="pageClass" xsi:type="string">Magento\Shipping\Test\Page\Adminhtml\ShipmentIndex</data>
             <data name="gridRetriever" xsi:type="string">getShipmentsGrid</data>
-            <constraint name="\Magento\Ui\Test\Constraint\AssertGridSorting"/>
+            <constraint name="Magento\Ui\Test\Constraint\AssertGridSorting"/>
         </variation>
         <variation name="SalesCreditMemoGridSorting">
             <data name="tag" xsi:type="string">severity:S3</data>
@@ -88,7 +88,7 @@
             </data>
             <data name="pageClass" xsi:type="string">Magento\Sales\Test\Page\Adminhtml\CreditMemoIndex</data>
             <data name="gridRetriever" xsi:type="string">getCreditMemoGrid</data>
-            <constraint name="\Magento\Ui\Test\Constraint\AssertGridSorting"/>
+            <constraint name="Magento\Ui\Test\Constraint\AssertGridSorting"/>
         </variation>
     </testCase>
 </config>
