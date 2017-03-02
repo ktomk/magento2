@@ -5,6 +5,8 @@
  */
 namespace Magento\Framework\Code\Generator;
 
+use Magento\Framework\ObjectManager\IllegalTypeNameException;
+
 abstract class EntityAbstract
 {
     /**
@@ -149,8 +151,10 @@ abstract class EntityAbstract
      */
     protected function _getFullyQualifiedClassName($className)
     {
+        // FIXME(tk): bubble up for invalid input, this whole method does nothing actually.
+        IllegalTypeNameException::assert($className);
         $className = ltrim($className, '\\');
-        return $className ? '\\' . $className : '';
+        return $className ? : '';
     }
 
     /**
