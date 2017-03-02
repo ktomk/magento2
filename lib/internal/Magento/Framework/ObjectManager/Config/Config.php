@@ -5,6 +5,7 @@
  */
 namespace Magento\Framework\ObjectManager\Config;
 
+use Magento\Framework\ObjectManager\IllegalTypeNameException;
 use Magento\Framework\Serialize\SerializerInterface;
 use Magento\Framework\ObjectManager\ConfigCacheInterface;
 use Magento\Framework\ObjectManager\DefinitionInterface;
@@ -160,7 +161,7 @@ class Config implements \Magento\Framework\ObjectManager\ConfigInterface
      */
     public function getPreference($type)
     {
-        $type = ltrim($type, '\\');
+        IllegalTypeNameException::assert($type);
         $preferencePath = [];
         while (isset($this->_preferences[$type])) {
             if (isset($preferencePath[$this->_preferences[$type]])) {
@@ -231,14 +232,15 @@ class Config implements \Magento\Framework\ObjectManager\ConfigInterface
             switch ($key) {
                 case 'preferences':
                     foreach ($curConfig as $for => $to) {
-                        $this->_preferences[ltrim($for, '\\')] = ltrim($to, '\\');
+                        $this->_preferences[IllegalTypeNameException::assert($for)]
+                            = IllegalTypeNameException::assert($to);
                     }
                     break;
 
                 default:
-                    $key = ltrim($key, '\\');
+                    IllegalTypeNameException::assert($key);
                     if (isset($curConfig['type'])) {
-                        $this->_virtualTypes[$key] = ltrim($curConfig['type'], '\\');
+                        $this->_virtualTypes[$key] = IllegalTypeNameException::assert($curConfig['type']);
                     }
                     if (isset($curConfig['arguments'])) {
                         if (!empty($this->_mergedArguments)) {
