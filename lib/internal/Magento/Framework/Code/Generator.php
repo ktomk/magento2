@@ -54,12 +54,7 @@ class Generator
         $this->definedClasses = $definedClasses ?: new DefinedClasses();
 
         // FIXME(tk): into the rabbit hole  ..
-        foreach ($generatedEntities as $entityType => $generatorClass) {
-            IllegalTypeNameException::assert($entityType);
-            IllegalTypeNameException::assert($generatorClass);
-        }
-
-        $this->_generatedEntities = $generatedEntities;
+        $this->setGeneratedEntities($generatedEntities);
     }
 
     /**
@@ -80,6 +75,12 @@ class Generator
      */
     public function setGeneratedEntities($generatedEntities)
     {
+        // FIXME(tk): into the rabbit hole  ..
+        foreach ($generatedEntities as $entityType => $generatorClass) {
+            IllegalTypeNameException::assert($entityType);
+            IllegalTypeNameException::assert($generatorClass);
+        }
+
         $this->_generatedEntities = $generatedEntities;
         return $this;
     }

@@ -139,9 +139,9 @@ class Persistor extends \Magento\Framework\Code\Generator\EntityAbstract
         $temporary = str_replace('\\Api\\Data\\', '\\Model\\Spi\\', $this->getSourceClassName());
         $parts = explode('\\', ltrim($temporary, '\\'));
         $className = array_pop($parts);
-        $className = str_replace('Interface', '', $className);
         // FIXME(tk): leading backslash, no no no ;), let it fail for the bigger picture first.
-        return implode('\\', $parts) . '\\' . $className . 'ResourceInterface';
+        $parts[] = preg_replace('~Interface$~', 'ResourceInterface', $className, 1);
+        return implode('\\', $parts);
     }
 
     /**
