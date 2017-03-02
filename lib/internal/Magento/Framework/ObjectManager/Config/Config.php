@@ -146,6 +146,7 @@ class Config implements \Magento\Framework\ObjectManager\ConfigInterface
      */
     public function getInstanceType($instanceName)
     {
+        IllegalTypeNameException::assert($instanceName);
         while (isset($this->_virtualTypes[$instanceName])) {
             $instanceName = $this->_virtualTypes[$instanceName];
         }
@@ -188,6 +189,7 @@ class Config implements \Magento\Framework\ObjectManager\ConfigInterface
      */
     protected function _collectConfiguration($type)
     {
+        IllegalTypeNameException::assert($type);
         if (!isset($this->_mergedArguments[$type])) {
             if (isset($this->_virtualTypes[$type])) {
                 $arguments = $this->_collectConfiguration($this->_virtualTypes[$type]);
@@ -294,7 +296,7 @@ class Config implements \Magento\Framework\ObjectManager\ConfigInterface
                 $this->_mergeConfiguration($configuration);
                 if (!$this->_mergedArguments) {
                     foreach ($this->_definitions->getClasses() as $class) {
-                        $this->_collectConfiguration($class);
+                        $this->_collectConfiguration(IllegalTypeNameException::assert($class));
                     }
                 }
                 $this->_cache->save(
